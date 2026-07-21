@@ -159,7 +159,7 @@ every candidate method's derivation.
   title  = {ADVR: Adversarial-Replay Unlearning for Leak-Safe Semantic Segmentation},
   author = {{ADVR authors}},
   year   = {2026},
-  note   = {Code: https://github.com/<you>/advr-unlearning}
+  note   = {Code: https://github.com/kavyansh/advr-unlearning}
 }
 ```
 
