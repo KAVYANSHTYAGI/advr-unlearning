@@ -1,0 +1,233 @@
+[
+  {
+    "A2_ft_anchored": {
+      "person_IoU": 0.22285312247552952,
+      "retain_mIoU": 23.83615098930015,
+      "mIoU": 23.67872900352132,
+      "residual_person": 0.2233261671123341,
+      "blend_fail": 49.91113414921627,
+      "silhouette_IoU": 10.353094321924598,
+      "recover_pts": 4.3,
+      "person_IoU_post_attack": 4.478414414087398,
+      "runtime_s": 895.9,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "blend": false,
+        "name": "A2_ft_anchored",
+        "tag": ""
+      }
+    }
+  },
+  {
+    "D1_ga_orth": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 7.995988423747546,
+      "mIoU": 7.942681834255895,
+      "residual_person": 0.0,
+      "blend_fail": 48.42184697516745,
+      "silhouette_IoU": 4.82078698045272,
+      "recover_pts": 5.2,
+      "person_IoU_post_attack": 5.2223666013369785,
+      "runtime_s": 712.8,
+      "config": {
+        "epochs": 2,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "blend": true,
+        "name": "D1_ga_orth",
+        "tag": ""
+      }
+    }
+  },
+  {
+    "B1_proto_collapse": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 1.2722173149587914,
+      "mIoU": 1.2637358661923994,
+      "residual_person": 0.0,
+      "blend_fail": 68.07301880324752,
+      "silhouette_IoU": 8.384107071313377,
+      "recover_pts": 2.0,
+      "person_IoU_post_attack": 2.0130228979810627,
+      "runtime_s": 869.2,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "blend": false,
+        "name": "B1_proto_collapse",
+        "tag": ""
+      }
+    }
+  },
+  {
+    "A2_ft_anchored_bn": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 0.11325801809788075,
+      "mIoU": 0.11250296464389486,
+      "residual_person": 0.0,
+      "blend_fail": 69.78806227910664,
+      "silhouette_IoU": 5.8990785817043925,
+      "recover_pts": 0.0,
+      "person_IoU_post_attack": 0.0,
+      "runtime_s": 892.8,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "lam_f": 0.0,
+        "freeze_bn": true,
+        "blend": false,
+        "name": "A2_ft_anchored",
+        "tag": "_bn"
+      }
+    }
+  },
+  {
+    "A2_ft_anchored_bn_lr3": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 0.11325801809788075,
+      "mIoU": 0.11250296464389486,
+      "residual_person": 0.0,
+      "blend_fail": 69.78806227910664,
+      "silhouette_IoU": 5.8990785817043925,
+      "recover_pts": 0.0,
+      "person_IoU_post_attack": 0.0,
+      "runtime_s": 893.3,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 3.0,
+        "lam_c": 1.0,
+        "lam_f": 0.0,
+        "freeze_bn": true,
+        "blend": false,
+        "name": "A2_ft_anchored",
+        "tag": "_bn_lr3"
+      }
+    }
+  },
+  {
+    "B1_proto_collapse_F1": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 0.11325801809788075,
+      "mIoU": 0.11250296464389486,
+      "residual_person": 0.0,
+      "blend_fail": 69.78806227910664,
+      "silhouette_IoU": 5.8990785817043925,
+      "recover_pts": 0.0,
+      "person_IoU_post_attack": 0.0,
+      "runtime_s": 860.6,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "lam_f": 1.0,
+        "freeze_bn": true,
+        "blend": false,
+        "name": "B1_proto_collapse",
+        "tag": "_F1"
+      }
+    }
+  },
+  {
+    "A2_ft_anchored_foratk": {
+      "person_IoU": 0.0005673437575433973,
+      "retain_mIoU": 24.981214009977133,
+      "mIoU": 24.81467636553567,
+      "residual_person": 0.0005673882775012563,
+      "blend_fail": 49.79062302016284,
+      "silhouette_IoU": 10.77966988559627,
+      "recover_pts": 3.9,
+      "person_IoU_post_attack": 3.932910790187669,
+      "runtime_s": 900.4,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "lam_f": 0.0,
+        "freeze_bn": false,
+        "blend": false,
+        "name": "A2_ft_anchored",
+        "tag": "_foratk"
+      }
+    }
+  },
+  {
+    "B1_proto_collapse_foratk": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 0.999231568543469,
+      "mIoU": 0.9925700247531791,
+      "residual_person": 0.0,
+      "blend_fail": 83.65352231431041,
+      "silhouette_IoU": 9.477311345644933,
+      "recover_pts": 2.0,
+      "person_IoU_post_attack": 1.9752974109532653,
+      "runtime_s": 871.4,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "lam_f": 0.0,
+        "freeze_bn": false,
+        "blend": false,
+        "name": "B1_proto_collapse",
+        "tag": "_foratk"
+      }
+    }
+  },
+  {
+    "ADV_silhouette_adv": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 24.35921877977396,
+      "mIoU": 24.1968239879088,
+      "residual_person": 0.0,
+      "blend_fail": 51.946794823620394,
+      "silhouette_IoU": 11.086067586900805,
+      "recover_pts": 3.2,
+      "person_IoU_post_attack": 3.206945051557491,
+      "runtime_s": 1166.8,
+      "config": {
+        "epochs": 3,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "lam_f": 0.0,
+        "lam_adv": 1.0,
+        "freeze_bn": false,
+        "blend": false,
+        "name": "ADV_silhouette",
+        "tag": "_adv"
+      }
+    }
+  },
+  {
+    "ADV_full_full_bs4": {
+      "person_IoU": 0.0,
+      "retain_mIoU": 0.97336513669625,
+      "mIoU": 0.9668760357849415,
+      "residual_person": 0.0,
+      "blend_fail": 65.82689989964722,
+      "silhouette_IoU": 7.301414528607545,
+      "recover_pts": 2.0,
+      "person_IoU_post_attack": 2.005600990360018,
+      "runtime_s": 4756.8,
+      "config": {
+        "epochs": 8,
+        "lr": 0.001,
+        "lam_r": 1.0,
+        "lam_c": 1.0,
+        "lam_f": 0.0,
+        "lam_adv": 1.0,
+        "freeze_bn": false,
+        "blend": false,
+        "replay_loader": 

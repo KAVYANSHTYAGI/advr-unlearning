@@ -1,0 +1,110 @@
+{
+  "original": {
+    "out_IoU": 68.7,
+    "out_AUC": 98.6,
+    "feat_IoU": 61.8,
+    "feat_AUC": 98.5
+  },
+  "oracle_FLOOR": {
+    "out_IoU": 17.0,
+    "out_AUC": 86.0,
+    "feat_IoU": 49.2,
+    "feat_AUC": 96.8
+  },
+  "DELETE_logitmask": {
+    "out_IoU": 54.5,
+    "out_AUC": 96.6,
+    "feat_IoU": 68.0,
+    "feat_AUC": 98.6
+  },
+  "A2": {
+    "out_IoU": 13.4,
+    "out_AUC": 87.1,
+    "feat_IoU": 37.7,
+    "feat_AUC": 94.6
+  },
+  "A2_s1": {
+    "out_IoU": 8.3,
+    "out_AUC": 83.9,
+    "feat_IoU": 27.9,
+    "feat_AUC": 94.4
+  },
+  "A2_s2": {
+    "out_IoU": 7.4,
+    "out_AUC": 83.4,
+    "feat_IoU": 32.5,
+    "feat_AUC": 94.9
+  },
+  "A2_s3": {
+    "out_IoU": 0.4,
+    "out_AUC": 86.3,
+    "feat_IoU": 9.8,
+    "feat_AUC": 95.2
+  },
+  "ADV": {
+    "out_IoU": 0.0,
+    "out_AUC": 81.3,
+    "feat_IoU": 16.7,
+    "feat_AUC": 92.0
+  },
+  "ADVF": {
+    "out_IoU": 0.0,
+    "out_AUC": 76.9,
+    "feat_IoU": 0.0,
+    "feat_AUC": 76.6
+  },
+  "ADVR": {
+    "out_IoU": 0.0,
+    "out_AUC": 79.8,
+    "feat_IoU": 43.0,
+    "feat_AUC": 94.3
+  },
+  "ADVR_s1": {
+    "out_IoU": 0.0,
+    "out_AUC": 82.3,
+    "feat_IoU": 35.1,
+    "feat_AUC": 94.6
+  },
+  "ADVR_s2": {
+    "out_IoU": 3.4,
+    "out_AUC": 81.9,
+    "feat_IoU": 32.7,
+    "feat_AUC": 94.2
+  },
+  "ADVR_s3": {
+    "out_IoU": 0.0,
+    "out_AUC": 81.9,
+    "feat_IoU": 32.7,
+    "feat_AUC": 93.9
+  },
+  "ADV_s1": {
+    "out_IoU": 3.3,
+    "out_AUC": 82.1,
+    "feat_IoU": 13.2,
+    "feat_AUC": 92.7
+  },
+  "ADV_s2": {
+    "out_IoU": 0.0,
+    "out_AUC": 82.1,
+    "feat_IoU": 18.6,
+    "feat_AUC": 93.3
+  },
+  "ADV_s3": {
+    "out_IoU": 0.0,
+    "out_AUC": 80.7,
+    "feat_IoU": 14.3,
+    "feat_AUC": 92.8
+  },
+  "B1": {
+    "out_IoU": 0.0,
+    "out_AUC": 78.3,
+    "feat_IoU": 0.0,
+    "feat_AUC": 79.9
+  },
+  "B1_s1": {
+    "out_IoU": 0.0,
+    "out_AUC": 69.1,
+    "feat_IoU": 0.0,
+    "feat_AUC": 67.1
+  }
+}

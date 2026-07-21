@@ -1,0 +1,114 @@
+{
+  "oracle_FLOOR": {
+    "out": {
+      "IoU_mean": 30.1,
+      "IoU_std": 13.3,
+      "AUC_mean": 91.0,
+      "AUC_std": 4.7
+    },
+    "feat": {
+      "IoU_mean": 62.6,
+      "IoU_std": 0.1,
+      "AUC_mean": 98.9,
+      "AUC_std": 0.0
+    }
+  },
+  "DELETE_logitmask": {
+    "out": {
+      "IoU_mean": 70.2,
+      "IoU_std": 1.5,
+      "AUC_mean": 98.6,
+      "AUC_std": 0.4
+    },
+    "feat": {
+      "IoU_mean": 76.1,
+      "IoU_std": 0.4,
+      "AUC_mean": 99.1,
+      "AUC_std": 0.2
+    }
+  },
+  "car_ADVR_s1": {
+    "out": {
+      "IoU_mean": 21.6,
+      "IoU_std": 4.5,
+      "AUC_mean": 92.2,
+      "AUC_std": 0.4
+    },
+    "feat": {
+      "IoU_mean": 55.0,
+      "IoU_std": 1.7,
+      "AUC_mean": 97.6,
+      "AUC_std": 0.2
+    }
+  },
+  "car_ADVR_s2": {
+    "out": {
+      "IoU_mean": 33.4,
+      "IoU_std": 6.7,
+      "AUC_mean": 92.9,
+      "AUC_std": 0.5
+    },
+    "feat": {
+      "IoU_mean": 53.3,
+      "IoU_std": 5.0,
+      "AUC_mean": 98.2,
+      "AUC_std": 0.1
+    }
+  },
+  "car_ADVR_s3": {
+    "out": {
+      "IoU_mean": 20.2,
+      "IoU_std": 1.7,
+      "AUC_mean": 89.2,
+      "AUC_std": 1.3
+    },
+    "feat": {
+      "IoU_mean": 54.2,
+      "IoU_std": 2.2,
+      "AUC_mean": 97.8,
+      "AUC_std": 0.1
+    }
+  },
+  "car_bl_DELETE_s1": {
+    "out": {
+      "IoU_mean": 66.3,
+      "IoU_std": 0.5,
+      "AUC_mean": 98.5,
+      "AUC_std": 0.0
+    },
+    "feat": {
+      "IoU_mean": 65.4,
+      "IoU_std": 1.3,
+      "AUC_mean": 98.7,
+      "AUC_std": 0.1
+    }
+  },
+  "car_bl_DELETE_s2": {
+    "out": {
+      "IoU_mean": 62.4,
+      "IoU_std": 0.6,
+      "AUC_mean": 98.1,
+      "AUC_std": 0.1
+    },
+    "feat": {
+      "IoU_mean": 65.5,
+      "IoU_std": 2.3,
+      "AUC_mean": 98.9,
+      "AUC_std": 0.0
+    }
+  },
+  "car_bl_DELETE_s3": {
+    "out": {
+      "IoU_mean": 58.7,
+      "IoU_std": 0.9,
+      "AUC_mean": 97.6,
+      "AUC_std": 0.3
+    },
+    "feat": {
+      "IoU_mean": 62.5,
+      "IoU_std": 1.2,
+      "AUC_mean": 98.6,
+      "AUC_std": 0.1
+    }
+  }
+}

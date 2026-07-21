@@ -1,0 +1,10 @@
+ADVR_r0.5_a0.5: person 0.4 | retain 27.5 | blend_fail 46.0 | silhouette 10.4 | recover 3.0
+ADVR_r0.5_a1.0: person 0.1 | retain 26.4 | blend_fail 49.5 | silhouette 10.5 | recover 2.8
+ADVR_r1.0_a0.5: person 0.1 | retain 27.7 | blend_fail 46.0 | silhouette 10.4 | recover 2.8
+ADVR_r1.0_a1.0: person 0.1 | retain 27.1 | blend_fail 45.5 | silhouette 10.2 | recover 3.1
+ADVR_r2.0_a0.5: person 0.2 | retain 26.2 | blend_fail 48.3 | silhouette 10.5 | recover 3.2
+ADVR_r2.0_a1.0: person 0.1 | retain 26.8 | blend_fail 48.7 | silhouette 10.7 | recover 2.6
+ADVR_r4.0_a0.5: person 0.2 | retain 23.6 | blend_fail 53.6 | silhouette 11.3 | recover 4.6
+ADVR_r4.0_a1.0: person 0.1 | retain 24.3 | blend_fail 50.2 | silhouette 10.5 | recover 4.0
+=== SWEEP DONE ===
+=== Pareto check (retain vs leakage) ===

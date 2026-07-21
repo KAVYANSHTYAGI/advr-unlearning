@@ -1,0 +1,26 @@
+{
+  "original": {
+    "attacker_IoU": 63.680244405483045,
+    "attacker_AUC": 98.04424447750269
+  },
+  "oracle_FLOOR": {
+    "attacker_IoU": 0.0,
+    "attacker_AUC": 81.94702286044165
+  },
+  "DELETE_logitmask": {
+    "attacker_IoU": 50.98494629126732,
+    "attacker_AUC": 95.00422296256082
+  },
+  "A2": {
+    "attacker_IoU": 7.2116663219172015,
+    "attacker_AUC": 85.46183966030453
+  },
+  "ADV": {
+    "attacker_IoU": 0.0,
+    "attacker_AUC": 81.40276467912827
+  },
+  "B1": {
+    "attacker_IoU": 0.0,
+    "attacker_AUC": 77.35868831265577
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "oracle_FLOOR": {
+    "out": {
+      "IoU_mean": 19.7,
+      "IoU_std": 2.0,
+      "AUC_mean": 87.8,
+      "AUC_std": 0.2
+    }
+  },
+  "DELETE_logitmask": {
+    "out": {
+      "IoU_mean": 48.5,
+      "IoU_std": 0.6,
+      "AUC_mean": 95.7,
+      "AUC_std": 0.2
+    }
+  },
+  "sf_A2_s1": {
+    "out": {
+      "IoU_mean": 15.3,
+      "IoU_std": 8.6,
+      "AUC_mean": 88.4,
+      "AUC_std": 0.6
+    }
+  },
+  "sf_ADVR_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 82.5,
+      "AUC_std": 0.5
+    }
+  }
+}

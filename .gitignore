@@ -1,0 +1,31 @@
+# Data & checkpoints (large, regenerable/downloadable — see docs/REPRODUCING.md)
+/data/
+/checkpoints/
+
+# Third-party reference clones (not imported at runtime — see README "Baselines & provenance")
+/vendor/
+
+# Paper sources (kept locally, not part of the code release)
+/paper/
+/paper-AAAI/
+
+# Run output — logs and intermediate JSON are regenerable; a few headline result
+# files are force-added below as "expected output" reference artifacts.
+results/**/*.log
+results/seg/rebuttal/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Editors / OS
+.DS_Store
+*.swp
+
+# Local env
+.env

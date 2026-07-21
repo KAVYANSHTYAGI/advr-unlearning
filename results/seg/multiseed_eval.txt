@@ -1,0 +1,55 @@
+############ SEED 1 ############
+A2_s1: person 0.0 | retain 22.3 | blend_fail 49.3 | silhouette 10.3 | recover 4.0
+ADV_s1: person 0.0 | retain 22.4 | blend_fail 53.1 | silhouette 11.1 | recover 2.9
+############ SEED 1 ############
+ADVR_s1: person 0.0 | retain 27.0 | blend_fail 50.4 | silhouette 11.0 | recover 2.9
+B1_s1: person 0.0 | retain 0.4 | blend_fail 92.1 | silhouette 9.2 | recover 2.0
+############ SEED 2 ############
+A2_s2: person 0.0 | retain 21.8 | blend_fail 50.8 | silhouette 10.1 | recover 4.6
+ADV_s2: person 0.0 | retain 23.0 | blend_fail 49.4 | silhouette 10.6 | recover 3.1
+ADVR_s2: person 0.1 | retain 26.1 | blend_fail 49.8 | silhouette 10.7 | recover 2.7
+############ SEED 3 ############
+A2_s3: person 0.0 | retain 23.0 | blend_fail 46.9 | silhouette 10.4 | recover 4.1
+ADV_s3: person 0.0 | retain 20.6 | blend_fail 57.4 | silhouette 11.2 | recover 2.9
+ADVR_s3: person 0.0 | retain 26.3 | blend_fail 45.4 | silhouette 10.1 | recover 2.5
+==== two-surface learned attack over all checkpoints ====
+original           out[IoU  68.7 AUC  98.6]  feat[IoU  61.8 AUC  98.5]
+oracle_FLOOR       out[IoU  17.0 AUC  86.0]  feat[IoU  49.2 AUC  96.8]
+DELETE_logitmask   out[IoU  54.5 AUC  96.6]  feat[IoU  68.0 AUC  98.6]
+A2                 out[IoU  13.4 AUC  87.1]  feat[IoU  37.7 AUC  94.6]
+A2_s1              out[IoU   8.3 AUC  83.9]  feat[IoU  27.9 AUC  94.4]
+A2_s2              out[IoU   7.4 AUC  83.4]  feat[IoU  32.5 AUC  94.9]
+A2_s3              out[IoU   0.4 AUC  86.3]  feat[IoU   9.8 AUC  95.2]
+ADV                out[IoU   0.0 AUC  81.3]  feat[IoU  16.7 AUC  92.0]
+ADVF               out[IoU   0.0 AUC  76.9]  feat[IoU   0.0 AUC  76.6]
+ADVR               out[IoU   0.0 AUC  79.8]  feat[IoU  43.0 AUC  94.3]
+ADVR_s1            out[IoU   0.0 AUC  82.3]  feat[IoU  35.1 AUC  94.6]
+ADVR_s2            out[IoU   3.4 AUC  81.9]  feat[IoU  32.7 AUC  94.2]
+ADVR_s3            out[IoU   0.0 AUC  81.9]  feat[IoU  32.7 AUC  93.9]
+ADV_s1             out[IoU   3.3 AUC  82.1]  feat[IoU  13.2 AUC  92.7]
+ADV_s2             out[IoU   0.0 AUC  82.1]  feat[IoU  18.6 AUC  93.3]
+ADV_s3             out[IoU   0.0 AUC  80.7]  feat[IoU  14.3 AUC  92.8]
+B1                 out[IoU   0.0 AUC  78.3]  feat[IoU   0.0 AUC  79.9]
+B1_s1              out[IoU   0.0 AUC  69.1]  feat[IoU   0.0 AUC  67.1]
+
+floors: out_AUC 86.0  feat_AUC 96.8
+--- excess AUC over floor (leak) ---
+original           out ++12.6   feat ++1.7
+oracle_FLOOR       out ++0.0   feat ++0.0
+DELETE_logitmask   out ++10.6   feat ++1.8
+A2                 out ++1.1   feat +-2.2
+A2_s1              out +-2.1   feat +-2.4
+A2_s2              out +-2.6   feat +-1.9
+A2_s3              out ++0.3   feat +-1.6
+ADV                out +-4.7   feat +-4.8
+ADVF               out +-9.1   feat +-20.2
+ADVR               out +-6.2   feat +-2.5
+ADVR_s1            out +-3.7   feat +-2.2
+ADVR_s2            out +-4.1   feat +-2.6
+ADVR_s3            out +-4.1   feat +-2.9
+ADV_s1             out +-3.9   feat +-4.1
+ADV_s2             out +-3.9   feat +-3.5
+ADV_s3             out +-5.3   feat +-4.0
+B1                 out +-7.7   feat +-16.9
+B1_s1              out +-16.9   feat +-29.7
+ALL DONE

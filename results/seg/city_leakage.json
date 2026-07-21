@@ -1,0 +1,198 @@
+{
+  "oracle_FLOOR": {
+    "out": {
+      "IoU_mean": 4.6,
+      "IoU_std": 2.9,
+      "AUC_mean": 90.9,
+      "AUC_std": 1.5
+    },
+    "feat": {
+      "IoU_mean": 48.0,
+      "IoU_std": 1.5,
+      "AUC_mean": 99.0,
+      "AUC_std": 0.1
+    }
+  },
+  "DELETE_logitmask": {
+    "out": {
+      "IoU_mean": 48.4,
+      "IoU_std": 1.3,
+      "AUC_mean": 98.9,
+      "AUC_std": 0.1
+    },
+    "feat": {
+      "IoU_mean": 63.2,
+      "IoU_std": 1.5,
+      "AUC_mean": 99.6,
+      "AUC_std": 0.0
+    }
+  },
+  "city_A2_s1": {
+    "out": {
+      "IoU_mean": 11.7,
+      "IoU_std": 4.3,
+      "AUC_mean": 87.0,
+      "AUC_std": 8.7
+    },
+    "feat": {
+      "IoU_mean": 46.4,
+      "IoU_std": 1.6,
+      "AUC_mean": 99.0,
+      "AUC_std": 0.0
+    }
+  },
+  "city_ADV_s1": {
+    "out": {
+      "IoU_mean": 1.4,
+      "IoU_std": 1.6,
+      "AUC_mean": 89.2,
+      "AUC_std": 1.3
+    },
+    "feat": {
+      "IoU_mean": 44.4,
+      "IoU_std": 0.9,
+      "AUC_mean": 98.8,
+      "AUC_std": 0.0
+    }
+  },
+  "city_ADVR_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 89.0,
+      "AUC_std": 0.3
+    },
+    "feat": {
+      "IoU_mean": 42.4,
+      "IoU_std": 2.1,
+      "AUC_mean": 98.7,
+      "AUC_std": 0.0
+    }
+  },
+  "city_B1_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 82.4,
+      "AUC_std": 3.3
+    },
+    "feat": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 87.1,
+      "AUC_std": 0.7
+    }
+  },
+  "city_bl_FT_s1": {
+    "out": {
+      "IoU_mean": 26.8,
+      "IoU_std": 9.1,
+      "AUC_mean": 93.8,
+      "AUC_std": 2.9
+    },
+    "feat": {
+      "IoU_mean": 48.4,
+      "IoU_std": 1.2,
+      "AUC_mean": 99.1,
+      "AUC_std": 0.1
+    }
+  },
+  "city_bl_NegGrad_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": NaN,
+      "AUC_std": NaN
+    },
+    "feat": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": NaN,
+      "AUC_std": NaN
+    }
+  },
+  "city_bl_NegGrad+_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 85.2,
+      "AUC_std": 0.4
+    },
+    "feat": {
+      "IoU_mean": 1.3,
+      "IoU_std": 1.8,
+      "AUC_mean": 83.6,
+      "AUC_std": 2.0
+    }
+  },
+  "city_bl_RL_s1": {
+    "out": {
+      "IoU_mean": 40.3,
+      "IoU_std": 0.3,
+      "AUC_mean": 98.8,
+      "AUC_std": 0.0
+    },
+    "feat": {
+      "IoU_mean": 42.8,
+      "IoU_std": 1.3,
+      "AUC_mean": 99.1,
+      "AUC_std": 0.0
+    }
+  },
+  "city_bl_SalUn_s1": {
+    "out": {
+      "IoU_mean": 49.6,
+      "IoU_std": 0.4,
+      "AUC_mean": 99.3,
+      "AUC_std": 0.1
+    },
+    "feat": {
+      "IoU_mean": 52.6,
+      "IoU_std": 1.5,
+      "AUC_mean": 99.5,
+      "AUC_std": 0.0
+    }
+  },
+  "city_bl_SSD_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 61.1,
+      "AUC_std": 0.3
+    },
+    "feat": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 58.7,
+      "AUC_std": 0.9
+    }
+  },
+  "city_bl_SCRUB_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": NaN,
+      "AUC_std": NaN
+    },
+    "feat": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": NaN,
+      "AUC_std": NaN
+    }
+  },
+  "city_bl_DELETE_s1": {
+    "out": {
+      "IoU_mean": 42.3,
+      "IoU_std": 1.2,
+      "AUC_mean": 97.6,
+      "AUC_std": 0.7
+    },
+    "feat": {
+      "IoU_mean": 46.8,
+      "IoU_std": 5.5,
+      "AUC_mean": 99.0,
+      "AUC_std": 0.1
+    }
+  }
+}

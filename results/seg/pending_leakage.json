@@ -1,0 +1,114 @@
+{
+  "oracle_FLOOR": {
+    "out": {
+      "IoU_mean": 15.3,
+      "IoU_std": 6.7,
+      "AUC_mean": 84.9,
+      "AUC_std": 0.9
+    },
+    "feat": {
+      "IoU_mean": 43.3,
+      "IoU_std": 7.2,
+      "AUC_mean": 96.3,
+      "AUC_std": 0.7
+    }
+  },
+  "DELETE_logitmask": {
+    "out": {
+      "IoU_mean": 53.5,
+      "IoU_std": 1.5,
+      "AUC_mean": 96.7,
+      "AUC_std": 0.2
+    },
+    "feat": {
+      "IoU_mean": 68.8,
+      "IoU_std": 0.2,
+      "AUC_mean": 98.6,
+      "AUC_std": 0.3
+    }
+  },
+  "ours_A2_s1": {
+    "out": {
+      "IoU_mean": 12.6,
+      "IoU_std": 2.2,
+      "AUC_mean": 84.0,
+      "AUC_std": 1.5
+    },
+    "feat": {
+      "IoU_mean": 28.6,
+      "IoU_std": 5.1,
+      "AUC_mean": 94.5,
+      "AUC_std": 0.2
+    }
+  },
+  "ours_ADV_s1": {
+    "out": {
+      "IoU_mean": 0.7,
+      "IoU_std": 0.9,
+      "AUC_mean": 81.4,
+      "AUC_std": 0.5
+    },
+    "feat": {
+      "IoU_mean": 15.8,
+      "IoU_std": 7.0,
+      "AUC_mean": 91.7,
+      "AUC_std": 0.3
+    }
+  },
+  "ours_ADVR_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 81.1,
+      "AUC_std": 0.7
+    },
+    "feat": {
+      "IoU_mean": 17.1,
+      "IoU_std": 5.4,
+      "AUC_mean": 93.3,
+      "AUC_std": 0.3
+    }
+  },
+  "ours_B1_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 70.7,
+      "AUC_std": 0.1
+    },
+    "feat": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 69.8,
+      "AUC_std": 0.9
+    }
+  },
+  "bl_SCRUB_s1": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": NaN,
+      "AUC_std": NaN
+    },
+    "feat": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": NaN,
+      "AUC_std": NaN
+    }
+  },
+  "bl_DELETE_s1": {
+    "out": {
+      "IoU_mean": 49.7,
+      "IoU_std": 0.3,
+      "AUC_mean": 95.4,
+      "AUC_std": 0.2
+    },
+    "feat": {
+      "IoU_mean": 53.6,
+      "IoU_std": 2.3,
+      "AUC_mean": 97.5,
+      "AUC_std": 0.1
+    }
+  }
+}

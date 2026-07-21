@@ -1,0 +1,95 @@
+{
+  "original": {
+    "person_IoU": 67.81118255740716,
+    "retain_mIoU": 34.53954256357825,
+    "mIoU": 34.76135349687045,
+    "residual_person": 82.35293991700715,
+    "blend_fail": 91.74952141334064,
+    "silhouette_IoU": 22.654105988893143
+  },
+  "oracle": {
+    "person_IoU": 0.0,
+    "retain_mIoU": 34.50625048964343,
+    "mIoU": 34.27620881971247,
+    "residual_person": 0.0,
+    "blend_fail": 43.980609880306766,
+    "silhouette_IoU": 11.033606009996518
+  },
+  "ft": {
+    "person_IoU": 0.017139147611631413,
+    "retain_mIoU": 33.073604958966854,
+    "mIoU": 32.85322852022449,
+    "residual_person": 0.017139408156217194,
+    "blend_fail": 46.3592942374976,
+    "silhouette_IoU": 11.593497008019176,
+    "runtime_s": 626.1,
+    "recover_pts": 9.2,
+    "person_IoU_post_attack": 9.26130519816535
+  },
+  "ga": {
+    "person_IoU": 0.0,
+    "retain_mIoU": 0.11325801809788075,
+    "mIoU": 0.11250296464389486,
+    "residual_person": 0.0,
+    "blend_fail": 69.78806227910664,
+    "silhouette_IoU": 5.8990785817043925,
+    "runtime_s": 415.3,
+    "recover_pts": 0.0,
+    "person_IoU_post_attack": 0.0
+  },
+  "neggrad+": {
+    "person_IoU": 0.0,
+    "retain_mIoU": 0.579714588973503,
+    "mIoU": 0.5758498250470132,
+    "residual_person": 0.0,
+    "blend_fail": 92.65277143480505,
+    "silhouette_IoU": 9.264599534741384,
+    "runtime_s": 438.3,
+    "recover_pts": 0.1,
+    "person_IoU_post_attack": 0.0916768216197444
+  },
+  "rl": {
+    "person_IoU": 0.0,
+    "retain_mIoU": 32.91839862853428,
+    "mIoU": 32.69894263767738,
+    "residual_person": 0.0,
+    "blend_fail": 75.85878497975494,
+    "silhouette_IoU": 19.15056146165997,
+    "runtime_s": 663.6,
+    "recover_pts": 63.8,
+    "person_IoU_post_attack": 63.80454283991389
+  },
+  "salun": {
+    "person_IoU": 0.0,
+    "retain_mIoU": 32.61664448755092,
+    "mIoU": 32.39920019096726,
+    "residual_person": 0.0,
+    "blend_fail": 71.68815997694476,
+    "silhouette_IoU": 18.034280198773875,
+    "runtime_s": 674.9,
+    "recover_pts": 54.8,
+    "person_IoU_post_attack": 54.83414241956493
+  },
+  "ssd": {
+    "person_IoU": 0.0,
+    "retain_mIoU": 0.0293438126870108,
+    "mIoU": 0.029148187269097393,
+    "residual_person": 0.0,
+    "blend_fail": 99.48385865994022,
+    "silhouette_IoU": 7.74176109943814,
+    "runtime_s": 414.1,
+    "recover_pts": 1.9,
+    "person_IoU_post_attack": 1.9451170791564443
+  },
+  "scrub": {
+    "person_IoU": 0.022120767738389772,
+    "retain_mIoU": 0.2758345635692123,
+    "mIoU": 0.27414313826367354,
+    "residual_person": 0.022759763735239073,
+    "blend_fail": 93.86113717885556,
+    "silhouette_IoU": 8.684481451358348,
+    "runtime_s": 929.0,
+    "recover_pts": 3.0,
+    "person_IoU_post_attack": 3.000383066413598
+  }
+}

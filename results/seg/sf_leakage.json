@@ -1,0 +1,66 @@
+{
+  "oracle_FLOOR": {
+    "out": {
+      "IoU_mean": 13.4,
+      "IoU_std": 8.9,
+      "AUC_mean": 86.1,
+      "AUC_std": 0.4
+    }
+  },
+  "DELETE_logitmask": {
+    "out": {
+      "IoU_mean": 48.3,
+      "IoU_std": 0.8,
+      "AUC_mean": 95.7,
+      "AUC_std": 0.2
+    }
+  },
+  "sf_ADVR_s1": {
+    "out": {
+      "IoU_mean": 0.2,
+      "IoU_std": 0.2,
+      "AUC_mean": 82.9,
+      "AUC_std": 0.6
+    }
+  },
+  "sf_ADVR_s2": {
+    "out": {
+      "IoU_mean": 0.2,
+      "IoU_std": 0.2,
+      "AUC_mean": 80.7,
+      "AUC_std": 0.6
+    }
+  },
+  "sf_ADVR_s3": {
+    "out": {
+      "IoU_mean": 0.0,
+      "IoU_std": 0.0,
+      "AUC_mean": 80.9,
+      "AUC_std": 0.3
+    }
+  },
+  "sf_bl_DELETE_s1": {
+    "out": {
+      "IoU_mean": 28.3,
+      "IoU_std": 2.2,
+      "AUC_mean": 93.6,
+      "AUC_std": 0.0
+    }
+  },
+  "sf_bl_DELETE_s2": {
+    "out": {
+      "IoU_mean": 31.7,
+      "IoU_std": 1.9,
+      "AUC_mean": 94.0,
+      "AUC_std": 0.1
+    }
+  },
+  "sf_bl_DELETE_s3": {
+    "out": {
+      "IoU_mean": 37.4,
+      "IoU_std": 1.8,
+      "AUC_mean": 94.6,
+      "AUC_std": 0.1
+    }
+  }
+}

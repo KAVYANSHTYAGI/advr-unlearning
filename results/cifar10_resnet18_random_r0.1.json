@@ -1,0 +1,95 @@
+{
+  "original": {
+    "UA": 0.0,
+    "RA": 100.0,
+    "TA": 94.55,
+    "MIA": 99.91111111111111,
+    "forget_acc": 100.0,
+    "runtime_s": 0.0
+  },
+  "retrain": {
+    "UA": 5.044444444444451,
+    "RA": 100.0,
+    "TA": 94.21,
+    "MIA": 88.06666666666668,
+    "forget_acc": 94.95555555555555,
+    "runtime_s": 0.0
+  },
+  "ft": {
+    "UA": 0.17777777777777715,
+    "RA": 99.91851851851852,
+    "TA": 93.92,
+    "MIA": 98.4,
+    "forget_acc": 99.82222222222222,
+    "runtime_s": 60.6,
+    "gap": 3.89,
+    "recover": 0.0,
+    "forget_acc_post_attack": 99.0
+  },
+  "ga": {
+    "UA": 0.0,
+    "RA": 100.0,
+    "TA": 94.52,
+    "MIA": 99.86666666666667,
+    "forget_acc": 100.0,
+    "runtime_s": 3.8,
+    "gap": 4.29,
+    "recover": 0.0,
+    "forget_acc_post_attack": 98.8
+  },
+  "neggrad+": {
+    "UA": 0.022222222222225696,
+    "RA": 99.96296296296296,
+    "TA": 94.17,
+    "MIA": 98.91111111111111,
+    "forget_acc": 99.97777777777777,
+    "runtime_s": 61.9,
+    "gap": 3.99,
+    "recover": 0.0,
+    "forget_acc_post_attack": 99.7
+  },
+  "rl": {
+    "UA": 15.777777777777771,
+    "RA": 89.22469135802469,
+    "TA": 83.76,
+    "MIA": 80.4,
+    "forget_acc": 84.22222222222223,
+    "runtime_s": 14.4,
+    "gap": 9.91,
+    "recover": 17.2,
+    "forget_acc_post_attack": 86.9
+  },
+  "salun": {
+    "UA": 9.288888888888891,
+    "RA": 95.82716049382717,
+    "TA": 88.51,
+    "MIA": 84.2,
+    "forget_acc": 90.71111111111111,
+    "runtime_s": 15.3,
+    "gap": 4.5,
+    "recover": 0.0,
+    "forget_acc_post_attack": 89.2
+  },
+  "ssd": {
+    "UA": 83.64444444444445,
+    "RA": 16.128395061728394,
+    "TA": 16.42,
+    "MIA": 23.288888888888888,
+    "forget_acc": 16.355555555555554,
+    "runtime_s": 7.5,
+    "gap": 76.26,
+    "recover": 40.1,
+    "forget_acc_post_attack": 49.9
+  },
+  "scrub": {
+    "UA": 0.0,
+    "RA": 100.0,
+    "TA": 94.5,
+    "MIA": 99.93333333333332,
+    "forget_acc": 100.0,
+    "runtime_s": 41.4,
+    "gap": 4.3,
+    "recover": 0.0,
+    "forget_acc_post_attack": 99.8
+  }
+}
