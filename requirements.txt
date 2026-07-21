@@ -1,0 +1,13 @@
+# Pinned to the environment the paper's numbers were produced in
+# (python 3.12, CUDA 12.8 / RTX 5080-5090, sm_120). Swap the torch/torchvision
+# build tag for your platform — see https://pytorch.org/get-started/locally/.
+torch==2.9.0
+torchvision==0.24.0
+numpy==2.3.5
+scipy==1.16.3
+scikit-learn==1.8.0
+pillow==12.0.0
+matplotlib==3.10.8
+
+# Only needed for the SegFormer-B2 backbone axis (seg/model.py lazy-imports this).
+transformers==4.57.6

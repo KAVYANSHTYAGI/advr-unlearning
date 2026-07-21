@@ -28,7 +28,9 @@ def main():
     p.add_argument("--epochs", type=int, default=3)
     p.add_argument("--lr", type=float, default=1e-3)
     p.add_argument("--lam_r", type=float, default=1.0)
-    p.add_argument("--lam_c", type=float, default=1.0)
+    p.add_argument("--lam_c", type=float, default=None,
+                   help="default: the candidate's own default (ADVR=0.0, ADVF/"
+                        "ADV_full/B1=1.0) unless explicitly set here")
     p.add_argument("--lam_f", type=float, default=0.0)
     p.add_argument("--lam_adv", type=float, default=1.0)
     p.add_argument("--freeze_bn", action="store_true")
@@ -59,10 +61,12 @@ def main():
     va = SegDS("val", "orig", size=args.size, crop=False)
     vl = DataLoader(va, batch_size=args.bs, shuffle=False, num_workers=8, pin_memory=True)
 
-    kw = dict(epochs=args.epochs, lr=args.lr, lam_r=args.lam_r, lam_c=args.lam_c,
+    kw = dict(epochs=args.epochs, lr=args.lr, lam_r=args.lam_r,
               lam_f=args.lam_f, lam_adv=args.lam_adv, freeze_bn=args.freeze_bn,
               blend=args.blend)
-    if args.name == "ADV_full":                 # retain replay on the full distribution
+    if args.lam_c is not None:                   # else: the candidate's own default
+        kw["lam_c"] = args.lam_c
+    if args.name in ("ADV_full", "ADVR", "ADVF"):  # retain replay on the full distribution
         rep = SegDS("train", "orig", size=args.size, crop=True)
         kw["replay_loader"] = _DL(rep, batch_size=args.bs, shuffle=True,
                                   num_workers=args.workers, pin_memory=True, drop_last=True)

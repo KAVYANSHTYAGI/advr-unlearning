@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "advr-unlearning"
+version = "0.1.0"
+description = "ADVR: adversarial-replay class-unlearning for semantic segmentation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "pillow",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+segformer = ["transformers"]
+
+[tool.setuptools.packages.find]
+include = ["mu", "mu.*", "seg", "seg.*"]
