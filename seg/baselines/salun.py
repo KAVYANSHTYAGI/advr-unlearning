@@ -12,7 +12,7 @@ global top-fraction masking and the masked RL update are identical to the source
 import torch
 
 from seg.model import seg_forward
-from ._common import clone_model, masked_ce, pixel_masks
+from ..utils import clone_model, masked_ce, pixel_masks
 from .random_label import run as rl_run
 
 

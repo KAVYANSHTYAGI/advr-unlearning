@@ -27,8 +27,8 @@ import torch.nn.functional as F
 
 from seg.data import IGNORE, PERSON
 from seg.engine import seg_metrics
-from seg.methods import _masked_ce
 from seg.model import seg_forward
+from seg.utils import masked_ce as _masked_ce
 
 
 @torch.no_grad()

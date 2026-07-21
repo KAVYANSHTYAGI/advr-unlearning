@@ -10,7 +10,7 @@ honest uncertainty on the floor.
 Assumes the variant oracles were trained by scripts/exp_oracle_ablation.sh into
 checkpoints/seg_oracle_<arch>_cls<cls>[_<scheme>].pth (nn = no suffix).
 
-Usage: PYTHONPATH=. python scripts/exp_oracle_ablation.py
+Usage: PYTHONPATH=. python scripts/experiments/rebuttal/exp_oracle_ablation.py
 Env: N_TRIALS, SCHEMES (default "nn,mode,rand,ignore"), ARCH, OUT_JSON
 """
 import json

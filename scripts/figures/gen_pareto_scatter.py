@@ -1,9 +1,17 @@
 """
 Pareto scatter: retain_mIoU (x) vs leakage AUC (y).
 One point per method. Shows the three failure modes as distinct quadrants.
-Data from Tables 1+2 in the paper (ADE20K, seed 1).
+
+AUC values are loaded from results/seg/baseline_comparison_attack.json when present
+(the actual run_attack_variance.py output) instead of being hand-copied, closing the
+drift risk of this figure silently going stale after a re-run. retain_mIoU has no
+equivalent JSON artifact yet (eval_ckpt.py only prints; see docs/REPRODUCING.md) so
+it stays a small literal table sourced from docs/EXPERIMENT_LOG.md's published
+headline table — update FALLBACK_RETAIN there if you re-run the comparison.
 """
+import json
 import os
+
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -14,34 +22,63 @@ from matplotlib.patches import FancyArrowPatch
 OUT_DIR = "paper/wacv_template/figures"
 os.makedirs(OUT_DIR, exist_ok=True)
 
-# ── Data from paper tables (ADE20K, DeepLabV3-R50) ──────────────────────────
-# (name, retain_mIoU, out_AUC, family)
-# family: "destroy" | "leak" | "safe" | "oracle" | "ours"
-METHODS = [
-    # Destroyed methods
-    ("NegGrad",   0.1,  50.0,  "destroy"),   # NaN → 50 (random = chance)
-    ("SCRUB",     0.1,  50.0,  "destroy"),
-    ("SSD",       0.1,  66.1,  "destroy"),
-    ("B1",        0.4,  77.1,  "destroy"),
+ATTACK_JSON = "results/seg/baseline_comparison_attack.json"
 
-    # Silent leakage baselines
-    ("FT",        9.3,  90.4,  "leak"),
-    ("NegGrad+",  7.7,  91.0,  "leak"),
-    ("RL",        5.2,  96.9,  "leak"),
-    ("SalUn",     8.0,  97.2,  "leak"),
-    ("DELETE",   12.4,  93.7,  "leak"),
-    ("DELETE\n(logitmask)", 36.6, 96.4, "leak"),
-
-    # Our method + ablations
-    ("A2",       23.7,  84.7,  "ours_abl"),
-    ("ADV",      21.4,  82.0,  "ours_abl"),
-    ("ADVR\n(ours)", 26.8, 81.6, "ours"),
-
-    # Gold standard
-    ("Oracle",   36.6,  84.8,  "oracle"),
+# retain_mIoU per method (ADE20K, DeepLabV3-R50, seed 1) — docs/EXPERIMENT_LOG.md
+# "FINAL rigorous leakage table" / multi-seed table. Keyed by the JSON model name.
+FALLBACK_RETAIN = {
+    "oracle_FLOOR": 36.6, "DELETE_logitmask": 36.6,
+    "bl_NegGrad_s1": 0.1, "bl_SCRUB_s1": 0.1, "bl_SSD_s1": 0.1,
+    "ours_B1_s1": 0.4,
+    "bl_FT_s1": 9.3, "bl_NegGrad+_s1": 7.7, "bl_RL_s1": 5.2, "bl_SalUn_s1": 8.0,
+    "bl_DELETE_s1": 12.4,
+    "ours_A2_s1": 23.7, "ours_ADV_s1": 21.4, "ours_ADVR_s1": 26.8,
+}
+# (json_key, display_name, family). family: "destroy"|"leak"|"ours_abl"|"ours"|"oracle"
+NAME_MAP = [
+    ("bl_NegGrad_s1",   "NegGrad",              "destroy"),
+    ("bl_SCRUB_s1",     "SCRUB",                "destroy"),
+    ("bl_SSD_s1",       "SSD",                  "destroy"),
+    ("ours_B1_s1",      "B1",                   "destroy"),
+    ("bl_FT_s1",        "FT",                   "leak"),
+    ("bl_NegGrad+_s1",  "NegGrad+",             "leak"),
+    ("bl_RL_s1",        "RL",                   "leak"),
+    ("bl_SalUn_s1",     "SalUn",                "leak"),
+    ("bl_DELETE_s1",    "DELETE",               "leak"),
+    ("DELETE_logitmask", "DELETE\n(logitmask)", "leak"),
+    ("ours_A2_s1",      "A2",                   "ours_abl"),
+    ("ours_ADV_s1",     "ADV",                  "ours_abl"),
+    ("ours_ADVR_s1",    "ADVR\n(ours)",         "ours"),
+    ("oracle_FLOOR",    "Oracle",               "oracle"),
 ]
 
-ORACLE_FLOOR = 84.8
+
+def load_methods():
+    """(name, retain_mIoU, out_AUC, family) list; AUC from JSON if available."""
+    attack = {}
+    if os.path.exists(ATTACK_JSON):
+        attack = {k: v["out"]["AUC_mean"] for k, v in json.load(open(ATTACK_JSON)).items()}
+    else:
+        print(f"[warn] {ATTACK_JSON} not found, falling back to the published "
+              "EXPERIMENT_LOG numbers for AUC too (run scripts/run_axis_extend.sh "
+              "--axis person_ade20k to regenerate it)")
+    fallback_auc = {  # only used if ATTACK_JSON is missing
+        "oracle_FLOOR": 84.8, "DELETE_logitmask": 96.4, "bl_NegGrad_s1": 50.0,
+        "bl_SCRUB_s1": 50.0, "bl_SSD_s1": 66.1, "ours_B1_s1": 77.1,
+        "bl_FT_s1": 90.4, "bl_NegGrad+_s1": 91.0, "bl_RL_s1": 96.9,
+        "bl_SalUn_s1": 97.2, "bl_DELETE_s1": 93.7, "ours_A2_s1": 84.7,
+        "ours_ADV_s1": 82.0, "ours_ADVR_s1": 81.6,
+    }
+    out = []
+    for key, name, fam in NAME_MAP:
+        auc = attack.get(key, fallback_auc[key])
+        out.append((name, FALLBACK_RETAIN[key], auc, fam))
+    return out
+
+
+METHODS = load_methods()
+
+ORACLE_FLOOR = next(auc for _, _, auc, fam in METHODS if fam == "oracle")
 FLOOR_STD    = 0.5
 THRESHOLD    = ORACLE_FLOOR + 2 * FLOOR_STD   # 85.8
 

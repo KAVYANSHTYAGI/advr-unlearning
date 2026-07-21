@@ -20,7 +20,7 @@ import torch
 import torch.nn as nn
 
 from seg.model import seg_forward
-from ._common import clone_model, masked_ce, pixel_masks
+from ..utils import clone_model, masked_ce, pixel_masks
 
 
 def _importance(model, loader, device, which):

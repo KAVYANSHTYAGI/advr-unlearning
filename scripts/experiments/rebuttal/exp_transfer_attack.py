@@ -9,7 +9,7 @@ not co-adaptation artifact.
 
 Output: an AUC transfer matrix per surface (rows=train model, cols=eval model).
 
-Usage: PYTHONPATH=. python scripts/exp_transfer_attack.py
+Usage: PYTHONPATH=. python scripts/experiments/rebuttal/exp_transfer_attack.py
 Env: TRANSFER_MODELS (default "original,oracle,ADVR"), N_TRIALS, ARCH, OUT_JSON
 """
 import json

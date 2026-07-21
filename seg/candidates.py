@@ -11,8 +11,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from seg.data import IGNORE, NUM_CLASSES, PERSON
-from seg.methods import _clone, _masked_ce, _masks
 from seg.model import seg_forward
+from seg.utils import clone_model as _clone
+from seg.utils import masked_ce as _masked_ce
+from seg.utils import pixel_masks as _masks
 
 
 def _frozen(model, device):
@@ -303,12 +305,26 @@ def adv_full(model, loader, device="cuda", epochs=6, lr=1e-3, lam_r=1.0, lam_adv
     return m
 
 
+# --------------------------------------------------------------------------- #
+# ADVR — the headline method. Discoverable alias for adv_full(lam_c=0): the
+# feature-collapse term off, output-adversarial + retain-anchor + retain-replay
+# only. Scripts historically called this via `--name ADV_full --lam_c 0.0`; both
+# spellings are kept below so existing checkpoints/scripts keep working.
+# --------------------------------------------------------------------------- #
+def adv_replay(model, loader, device="cuda", **kw):
+    """ADVR = adv_full with lam_c=0 (feature-collapse term disabled)."""
+    kw.setdefault("lam_c", 0.0)
+    return adv_full(model, loader, device=device, **kw)
+
+
 CANDIDATES = {
     "A2_ft_anchored": ft_anchored,
     "D1_ga_orth": ga_retain_orth,
     "B1_proto_collapse": proto_collapse,
     "ADV_silhouette": adv_silhouette,
     "ADV_full": adv_full,
+    "ADVF": adv_full,
+    "ADVR": adv_replay,
 }
 
 

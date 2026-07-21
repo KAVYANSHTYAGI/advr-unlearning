@@ -14,7 +14,7 @@ forget (max step) or retain (min step) pixel masks.
 import torch
 
 from seg.model import seg_forward
-from ._common import DistillKL, clone_model, masked_ce, pixel_masks, sgd
+from ..utils import DistillKL, clone_model, masked_ce, pixel_masks, sgd
 
 
 def run(model, loader, device="cuda", epochs=5, lr=5e-4, kd_T=4.0,

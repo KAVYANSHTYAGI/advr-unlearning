@@ -9,7 +9,7 @@ against an adaptive white-box adversary -- the sentence that otherwise sinks the
 
 For each model we report the single best (over restarts x rounds) val AUC/IoU.
 
-Usage: PYTHONPATH=. python scripts/exp_adaptive_attack.py
+Usage: PYTHONPATH=. python scripts/experiments/rebuttal/exp_adaptive_attack.py
 Env: KIND (default vit), RESTARTS, ROUNDS, ITERS, UNLEARNED, ARCH, OUT_JSON
 """
 import json

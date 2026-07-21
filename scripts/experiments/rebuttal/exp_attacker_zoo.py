@@ -9,7 +9,7 @@ Both surfaces (output field + penultimate features), N_TRIALS each, mean+/-std.
 If ADVR stays <= floor+2sigma under ALL THREE architectures, the claim "no
 learned function recovers the silhouette" is defensible against architecture choice.
 
-Usage: PYTHONPATH=. python scripts/exp_attacker_zoo.py
+Usage: PYTHONPATH=. python scripts/experiments/rebuttal/exp_attacker_zoo.py
 Env: N_TRIALS, KINDS (default "cnn,unet,vit"), UNLEARNED, ARCH, OUT_JSON, MAX_ITERS
 """
 import json

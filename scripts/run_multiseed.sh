@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+# Produces the 3-seed headline table (A2/ADV/ADVR retain_mIoU + recover_pts,
+# person_ade20k axis) reported in docs/EXPERIMENT_LOG.md 2026-06-30.
 set -e
 cd "$(dirname "$0")/.."
-source /home/kavyansh/anaconda3/etc/profile.d/conda.sh
-conda activate myenv
+if command -v conda >/dev/null 2>&1 && [ -z "${CONDA_DEFAULT_ENV:-}" ]; then
+  source "$(conda info --base)/etc/profile.d/conda.sh" && conda activate myenv
+fi
 export PYTHONPATH=. PYTORCH_ALLOC_CONF=expandable_segments:True
 EVLOG=results/seg/multiseed_eval.txt
 [ -f "$EVLOG" ] || : > $EVLOG
@@ -27,5 +30,6 @@ for SEED in 1 2 3; do
 done
 
 echo "==== two-surface learned attack over all checkpoints ====" | tee -a $EVLOG
-python scripts/run_attack_full.py | tee -a $EVLOG
+UNLEARNED="A2_s1,A2_s2,A2_s3,ADV_s1,ADV_s2,ADV_s3,ADVR_s1,ADVR_s2,ADVR_s3,B1_s1" \
+  python scripts/run_attack_variance.py | tee -a $EVLOG
 echo "ALL DONE" | tee -a $EVLOG

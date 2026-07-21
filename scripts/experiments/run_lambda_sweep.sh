@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+# lambda-sweep ablation for ADVR (lam_r x lam_adv) -- supplementary to the
+# headline table, not required to reproduce it. See docs/REPRODUCING.md.
 set -e
-cd "$(dirname "$0")/.."
-source /home/kavyansh/anaconda3/etc/profile.d/conda.sh
-conda activate myenv
+cd "$(dirname "$0")/../.."
+if command -v conda >/dev/null 2>&1 && [ -z "${CONDA_DEFAULT_ENV:-}" ]; then
+  source "$(conda info --base)/etc/profile.d/conda.sh" && conda activate myenv
+fi
 export PYTHONPATH=. PYTORCH_ALLOC_CONF=expandable_segments:True
 EVLOG=results/seg/lambda_sweep.txt; : > $EVLOG
 

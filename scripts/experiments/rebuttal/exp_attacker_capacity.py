@@ -8,7 +8,7 @@ privacy claim is not an artifact of a weak adversary.
 
 Each cell runs N_TRIALS attacker trainings; we report mean+/-std.
 
-Usage: PYTHONPATH=. python scripts/exp_attacker_capacity.py
+Usage: PYTHONPATH=. python scripts/experiments/rebuttal/exp_attacker_capacity.py
 Env: N_TRIALS, UNLEARNED, ARCH, FORGET_CLS, OUT_JSON, MAX_ITERS
 """
 import json

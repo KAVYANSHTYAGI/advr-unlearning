@@ -4,9 +4,10 @@
 # The default "nn" oracle already exists (checkpoints/seg_oracle_..._cls12.pth), so
 # we only retrain the mode/rand/ignore variants.
 set -e
-cd "$(dirname "$0")/.."
-source /home/kavyansh/anaconda3/etc/profile.d/conda.sh
-conda activate myenv
+cd "$(dirname "$0")/../../.."
+if command -v conda >/dev/null 2>&1 && [ -z "${CONDA_DEFAULT_ENV:-}" ]; then
+  source "$(conda info --base)/etc/profile.d/conda.sh" && conda activate myenv
+fi
 export PYTHONPATH=. PYTORCH_ALLOC_CONF=expandable_segments:True
 EPOCHS=${EPOCHS:-24}; BS=${BS:-6}
 mkdir -p results/seg
@@ -21,5 +22,5 @@ for SCHEME in mode rand ignore; do
 done
 
 echo "[oracle-abl] attacking all oracle variants"
-python scripts/exp_oracle_ablation.py
+python scripts/experiments/rebuttal/exp_oracle_ablation.py
 echo "[oracle-abl] DONE"

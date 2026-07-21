@@ -10,7 +10,7 @@ Segmentation adaptation: within each image, CE on retain pixels minus CE on forg
 pixels, both from the same forward pass.
 """
 from seg.model import seg_forward
-from ._common import clone_model, masked_ce, pixel_masks, sgd
+from ..utils import clone_model, masked_ce, pixel_masks, sgd
 
 
 def run(model, loader, device="cuda", epochs=5, lr=0.01, beta=0.999, **_):

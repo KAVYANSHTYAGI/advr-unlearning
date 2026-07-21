@@ -13,6 +13,7 @@ its surroundings, not leave a person-shaped hole.
 """
 import glob
 import os
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -22,8 +23,14 @@ from torch.utils.data import Dataset
 from torchvision import transforms
 from torchvision.transforms import functional as TF
 
-ADE_ROOT = ("/home/kavyansh/MySSD/research project/russo_work/ISP/dataset/"
-            "ROD_TAISP/ADE20K_raw/ADE20K/ADEChallengeData2016")
+# Repo root = the parent of this file's package dir (project1/seg/data.py -> project1/).
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# ADE20K isn't redistributed in this repo (licensing) — download it yourself (see
+# docs/REPRODUCING.md) and either symlink it to data/ADE20K or point ADE20K_ROOT at
+# your copy. Expected layout: <root>/images/{training,validation}_raw/*.jpg,
+# <root>/annotations/{training,validation}/*.png (mmseg-style extraction).
+ADE_ROOT = os.environ.get("ADE20K_ROOT", str(_REPO_ROOT / "data" / "ADE20K"))
 # Dataset-dependent globals, env-configurable so one codebase serves both
 # ADE20K (150 classes, person idx 12) and Cityscapes (19 classes, person idx 11).
 #   FORGET_CLS  -> index of the class to unlearn (ADE20K person=12, car=20;
@@ -34,8 +41,9 @@ PERSON = int(_os.environ.get("FORGET_CLS", "12"))
 IGNORE = 255
 NUM_CLASSES = int(_os.environ.get("NUM_CLASSES", "150"))
 
-CITY_ROOT = ("/home/kavyansh/MySSD/research project/russo_work/machine_unlearning/"
-             "project1/data/cityscapes")
+# Cityscapes: download from cityscapes-dataset.com and extract to data/cityscapes
+# (or point CITYSCAPES_ROOT at your copy). See docs/REPRODUCING.md.
+CITY_ROOT = os.environ.get("CITYSCAPES_ROOT", str(_REPO_ROOT / "data" / "cityscapes"))
 # Cityscapes labelId (0..33) -> trainId (0..18), else IGNORE. Standard 19-class map.
 _CITY_LABELID_TO_TRAINID = np.full(34, IGNORE, dtype=np.int64)
 for _lid, _tid in {7: 0, 8: 1, 11: 2, 12: 3, 13: 4, 17: 5, 19: 6, 20: 7, 21: 8,

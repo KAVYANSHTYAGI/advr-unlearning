@@ -1,16 +1,16 @@
-"""Shared utilities for the segmentation-unlearning baselines.
+"""Shared primitives for every unlearning method in this codebase (candidates,
+faithful baselines, audit).
 
-Every baseline in this package is a FAITHFUL port of a published method's official
-code / equations (source cited in each module's docstring), adapted to dense
-prediction by the same rule everywhere:
+Every method in `seg/candidates.py` and `seg/baselines/` reduces to the same rule
+for adapting a classification-style loss to dense prediction:
 
   * classification loss on a *sample*  ->  loss masked to that sample's pixels
   * forget set  ->  forget pixels  F = {i : y_i == PERSON}
   * retain set  ->  retain pixels  R = {i : y_i != PERSON and y_i != IGNORE}
 
 so a single image contributes both forget and retain pixels (the segmentation-
-specific entanglement). This module holds the primitives the ports build on; it does
-NOT invent any method logic of its own.
+specific entanglement). This module holds those primitives; it does NOT invent any
+method logic of its own.
 """
 import copy
 

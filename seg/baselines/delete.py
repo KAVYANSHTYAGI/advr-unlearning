@@ -21,7 +21,7 @@ import torch.nn.functional as F
 
 from seg.data import IGNORE, PERSON
 from seg.model import seg_forward
-from ._common import clone_model, sgd
+from ..utils import clone_model, sgd
 
 
 def run(model, loader, device="cuda", epochs=5, lr=0.01, T=1.0, **_):

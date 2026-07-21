@@ -14,7 +14,7 @@ import torch
 
 from seg.data import NUM_CLASSES, PERSON
 from seg.model import seg_forward
-from ._common import clone_model, masked_ce, pixel_masks, sgd
+from ..utils import clone_model, masked_ce, pixel_masks, sgd
 
 
 def run(model, loader, device="cuda", epochs=10, lr=0.013, mask=None, **_):

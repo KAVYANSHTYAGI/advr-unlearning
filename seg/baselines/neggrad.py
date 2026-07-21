@@ -8,7 +8,7 @@ unlearn_epochs=5, unlearn_lr=1e-4 (small, since ascent is unstable).
 Segmentation adaptation: ascend on the forget (person) pixels' cross-entropy.
 """
 from seg.model import seg_forward
-from ._common import clone_model, masked_ce, pixel_masks, sgd
+from ..utils import clone_model, masked_ce, pixel_masks, sgd
 
 
 def run(model, loader, device="cuda", epochs=5, lr=1e-4, **_):

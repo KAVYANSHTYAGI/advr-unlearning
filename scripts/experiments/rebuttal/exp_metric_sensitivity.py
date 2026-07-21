@@ -14,7 +14,7 @@ argmax prediction differs from the dominant-neighbour target (i.e. the region di
 NOT blend in). This script emits it alongside the sweep so the paper can cite a
 single reproducible source.
 
-Usage: PYTHONPATH=. python scripts/exp_metric_sensitivity.py
+Usage: PYTHONPATH=. python scripts/experiments/rebuttal/exp_metric_sensitivity.py
 Env: MODELS (default "oracle,ADVR,bl_SSD,bl_DELETE_s1"), STEPS, ARCH, OUT_JSON
 """
 import json

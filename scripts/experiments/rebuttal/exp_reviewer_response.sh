@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
 # Reviewer-response experiment queue (AAAI rebuttal).
-# Runs on the 5090:  ssh 5090  ->  copy project1  ->  bash scripts/exp_reviewer_response.sh
+# Runs on the 5090:  ssh 5090  ->  copy project1  ->  bash scripts/experiments/rebuttal/exp_reviewer_response.sh
 #
 # Tier 1 (cheap, attacker-side only, NO retraining -- reuses existing checkpoints):
 #   T1.5  attacker variance at 10 seeds        run_attack_variance.py
@@ -20,10 +20,12 @@
 #   UNLEARNED   comma list of unlearned_<name>.pth to attack
 # =============================================================================
 set -e
-cd "$(dirname "$0")/.."
-source /home/kavyansh/anaconda3/etc/profile.d/conda.sh
-conda activate myenv
+cd "$(dirname "$0")/../../.."
+if command -v conda >/dev/null 2>&1 && [ -z "${CONDA_DEFAULT_ENV:-}" ]; then
+  source "$(conda info --base)/etc/profile.d/conda.sh" && conda activate myenv
+fi
 export PYTHONPATH=. PYTORCH_ALLOC_CONF=expandable_segments:True
+EXP=scripts/experiments/rebuttal
 mkdir -p results/seg results/seg/rebuttal
 LOG=results/seg/rebuttal/queue.log
 : > "$LOG"
@@ -58,24 +60,24 @@ run "T1.5 variance(N=$NTV)" $R/attack_variance_n10.json \
   env N_TRIALS=$NTV OUT_JSON=$R/attack_variance_n10.json python scripts/run_attack_variance.py
 
 run "T1.1 capacity-sweep" $R/attacker_capacity.json \
-  env N_TRIALS=$NT OUT_JSON=$R/attacker_capacity.json python scripts/exp_attacker_capacity.py
+  env N_TRIALS=$NT OUT_JSON=$R/attacker_capacity.json python $EXP/exp_attacker_capacity.py
 
 run "T1.2 attacker-zoo" $R/attacker_zoo.json \
-  env N_TRIALS=$NT OUT_JSON=$R/attacker_zoo.json python scripts/exp_attacker_zoo.py
+  env N_TRIALS=$NT OUT_JSON=$R/attacker_zoo.json python $EXP/exp_attacker_zoo.py
 
 run "T1.4 transfer-attack" $R/transfer_attack.json \
-  env N_TRIALS=$NT OUT_JSON=$R/transfer_attack.json python scripts/exp_transfer_attack.py
+  env N_TRIALS=$NT OUT_JSON=$R/transfer_attack.json python $EXP/exp_transfer_attack.py
 
 run "T1.3 adaptive-attack" $R/adaptive_attack.json \
-  env OUT_JSON=$R/adaptive_attack.json python scripts/exp_adaptive_attack.py
+  env OUT_JSON=$R/adaptive_attack.json python $EXP/exp_adaptive_attack.py
 
 run "T2.2 metric-sensitivity" $R/metric_sensitivity.json \
-  env OUT_JSON=$R/metric_sensitivity.json python scripts/exp_metric_sensitivity.py
+  env OUT_JSON=$R/metric_sensitivity.json python $EXP/exp_metric_sensitivity.py
 
 # ---- Tier 2: retrains oracle variants (skippable) ----
 if [ "${SKIP_T2:-0}" != "1" ] && [ "${SMOKE:-0}" != "1" ]; then
   run "T2.1 oracle-ablation" $R/oracle_ablation.json \
-    env OUT_JSON=$R/oracle_ablation.json bash scripts/exp_oracle_ablation.sh
+    env OUT_JSON=$R/oracle_ablation.json bash $EXP/exp_oracle_ablation.sh
 fi
 
 echo "############ REBUTTAL QUEUE DONE  $(date '+%F %T') ############" | tee -a "$LOG"
