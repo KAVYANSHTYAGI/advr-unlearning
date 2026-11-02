@@ -1,4 +1,6 @@
-# ADVR — leak-safe class-unlearning for semantic segmentation
+# ADVR: leak-safe class-unlearning for semantic segmentation
+
+Video extension: [PACE](https://arxiv.org/abs/2610.27982) ([project page](https://kavyanshtyagi.github.io/PACE-Redundancy-Not-Trajectory-Carries-the-Privacy-Leak-in-Video-Unlearning/), [code](https://github.com/KAVYANSHTYAGI/PACE-Redundancy-Not-Trajectory-Carries-the-Privacy-Leak-in-Video-Unlearning)).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
@@ -157,9 +159,9 @@ every candidate method's derivation.
 ```bibtex
 @misc{advr2026,
   title  = {ADVR: Adversarial-Replay Unlearning for Leak-Safe Semantic Segmentation},
-  author = {{ADVR authors}},
+  author = {Tyagi, Kavyansh and Russo, Paolo},
   year   = {2026},
-  note   = {Code: https://github.com/kavyansh/advr-unlearning}
+  note   = {Code: https://github.com/KAVYANSHTYAGI/advr-unlearning}
 }
 ```
 
